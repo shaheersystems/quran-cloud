@@ -3,7 +3,7 @@ import Banner from "../components/Banner";
 import SurahCard from "../components/SurahCard";
 import axios from "axios";
 function Home() {
-  const baseUrl = "http://api.alquran.cloud/v1/surah";
+  const baseUrl = "https://api.alquran.cloud/v1/surah";
   const [data, setData] = useState({});
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
