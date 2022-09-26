@@ -10,9 +10,18 @@ function Footer() {
         </a>
       </div>
       <div className="space-x-4">
-        <a href="/">LinkedIn</a>
-        <a href="/">Instagram</a>
-        <a href="/">Twitter</a>
+        <a
+          className="font-poppins"
+          href="https://www.linkedin.com/in/muhammad-shaheer-a28994242/"
+        >
+          LinkedIn
+        </a>
+        <a className="font-poppins" href="https://github.com/shaheersystems">
+          Github
+        </a>
+        <a className="font-poppins" href="https://twitter.com/shaheerdevr">
+          Twitter
+        </a>
       </div>
     </div>
   );

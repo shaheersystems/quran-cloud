@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         arabic: ["'Amiri Quran'", "serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

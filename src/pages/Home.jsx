@@ -54,7 +54,7 @@ function Home() {
                   name={item.name}
                   number={item.number}
                   englishName={item.englishName}
-                  englishTranslation={item.englishTranslation}
+                  englishNameTranslation={item.englishNameTranslation}
                   numberOfAyahs={item.numberOfAyahs}
                 />
               );

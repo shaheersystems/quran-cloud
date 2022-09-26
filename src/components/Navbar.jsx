@@ -2,14 +2,14 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="h-16 border flex px-10 items-center justify-between">
+    <div className="sticky top-0 bg-white h-16 border flex px-10 items-center justify-between">
       <div>
         <a href="/">
           <h1 className="text-3xl font-bold font-serif">Quran.com</h1>
         </a>
       </div>
-      <div className="flex gap-8">
-        <button className="hover:bg-teal-100 p-2 rounded-full">
+      <div className="flex items-center gap-8">
+        <button className="hover:bg-gray-100 p-2 rounded-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -25,7 +25,7 @@ function Navbar() {
             />
           </svg>
         </button>
-        <button className="hover:bg-teal-100 p-2 rounded-full">
+        <button className="hover:bg-gray-100 p-2 rounded-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -41,9 +41,12 @@ function Navbar() {
             />
           </svg>
         </button>
-        <button className="px-3 py-1 bg-teal-500 text-white rounded-full">
+        <a
+          href="https://github.com/shaheersystems/quran-cloud"
+          className="px-3 py-1 rounded-full bg-stone-900 text-white"
+        >
           Github
-        </button>
+        </a>
       </div>
     </div>
   );
