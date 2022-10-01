@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Banner from "../components/Banner";
 import SurahCard from "../components/SurahCard";
 import axios from "axios";
-function Home() {
+function Home({ setIsOpen }) {
   const baseUrl = "https://api.alquran.cloud/v1/surah";
   const [data, setData] = useState({});
   const [error, setError] = useState(false);
@@ -31,7 +31,7 @@ function Home() {
   }
   return (
     <div>
-      <Banner />
+      <Banner setIsOpen={setIsOpen} />
       <div className="border-b max-w-5xl m-auto h-20 flex justify-between items-center">
         <h1 className="text-2xl font-bold">Surahs</h1>
         <div>

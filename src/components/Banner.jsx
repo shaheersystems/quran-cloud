@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function Banner() {
+function Banner({ setIsOpen }) {
   return (
     <div className="max-h-fit py-10 px-10 flex items-center justify-center flex-col bg-teal-100">
       <div className="h-48 w-56 text-white">
@@ -12,7 +12,10 @@ function Banner() {
         </svg>
       </div>
       <div className="w-full py-5 flex items-center justify-center">
-        <button className="shadow-md flex text-gray-500 hover:text-black items-center gap-8 rounded-full py-4 px-5 w-1/2 bg-white">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="shadow-md flex text-gray-500 hover:text-black items-center gap-8 rounded-full py-4 px-5 w-1/2 bg-white"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

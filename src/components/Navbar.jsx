@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar() {
+function Navbar({ onClick }) {
   return (
     <div className="sticky top-0 bg-white h-16 border flex px-10 items-center justify-between">
       <div>
@@ -9,7 +9,10 @@ function Navbar() {
         </a>
       </div>
       <div className="flex items-center gap-8">
-        <button className="hover:bg-gray-100 p-2 rounded-full">
+        <button
+          onClick={onClick}
+          className="hover:bg-gray-100 p-2 rounded-full"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
