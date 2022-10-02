@@ -34,19 +34,37 @@ function ModalWindow({ isOpen, setIsOpen }) {
   return (
     <Modal show={isOpen} onClose={onClose}>
       <Modal.Header>
-        <input
-          type="text"
-          className="w-96 rounded border-none"
-          placeholder="What you want to read"
-          onChange={onChange}
-        />
+        <div className="flex items-center gap-2 relative">
+          <div className="absolute left-3" htmlFor="search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          </div>
+          <input
+            id="search"
+            type="text"
+            className="w-96 px-10 rounded-full outline-none border-none"
+            placeholder="What you want to read"
+            onChange={onChange}
+          />
+        </div>
       </Modal.Header>
       <Modal.Body className="bg-black">
         <div>
           <h3 className="py-3 font-semibold">Try Navigating to:</h3>
         </div>
         <div className="h-64 overflow-y-scroll">
-          {" "}
           {isLoading ? (
             <Spinner aria-label="Default status example" />
           ) : filteredData.length !== 0 ? (
@@ -61,7 +79,7 @@ function ModalWindow({ isOpen, setIsOpen }) {
             })
           ) : (
             <div className="w-full h-64 flex gap-3 items-center justify-center">
-              <span>No Resul were found</span>
+              <span>No Results were found</span>
             </div>
           )}
         </div>
