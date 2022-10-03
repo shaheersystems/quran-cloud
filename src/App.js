@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Surah from "./pages/Surah";
 import ModalWindow from "./components/ModalWindow";
 import { useState } from "react";
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   function onClick() {
