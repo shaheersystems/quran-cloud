@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { PropTypes } from "prop-types";
 function SurahNavigation({ name, id, onClick }) {
   return (
     <Link to={`/surah/${id}`} onClick={onClick}>
@@ -26,5 +26,11 @@ function SurahNavigation({ name, id, onClick }) {
     </Link>
   );
 }
+
+SurahNavigation.propTypes = {
+  name: PropTypes.string,
+  id: PropTypes.number,
+  onClick: PropTypes.func,
+};
 
 export default SurahNavigation;

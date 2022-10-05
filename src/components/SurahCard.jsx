@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
 function SurahCard(props) {
   return (
     <Link to={`/surah/${props.number}`}>
@@ -23,5 +24,13 @@ function SurahCard(props) {
     </Link>
   );
 }
+
+SurahCard.propTypes = {
+  number: PropTypes.number,
+  englishName: PropTypes.string,
+  englishNameTranslation: PropTypes.string,
+  name: PropTypes.string,
+  numberOfAyahs: PropTypes.number,
+};
 
 export default SurahCard;

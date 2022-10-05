@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SingleAyah from "../components/SingleAyah";
 import { Link } from "react-router-dom";
-import { Tooltip } from "flowbite-react";
+import { Tooltip, Spinner } from "flowbite-react";
 import axios from "axios";
 import ReadingProgress from "../components/ReadingProgress";
 import { createRef } from "react";
@@ -62,11 +62,15 @@ function Surah() {
           className="max-w-full max-h-fit py-10 gap-10 items-center flex flex-wrap flex-row-reverse justify-center border-b"
           ref={target}
         >
-          {loading
-            ? "Loading....."
-            : data.ayahs?.map((item) => {
-                return <SingleAyah key={item.number} text={item.text} />;
-              })}
+          {loading ? (
+            <div className="h-36 flex items-center w-full justify-center">
+              <Spinner aria-label="Loading Surah..." />
+            </div>
+          ) : (
+            data.ayahs?.map((item) => {
+              return <SingleAyah key={item.number} text={item.text} />;
+            })
+          )}
         </div>
         <div className="h-16 flex items-center gap-2 max-w-5xl m-auto">
           <Link

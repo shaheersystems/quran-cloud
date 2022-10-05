@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { PropTypes } from "prop-types";
 const ReadingProgress = ({ target }) => {
   const [readingProgress, setReadingProgress] = useState(0);
   const scrollListener = () => {
@@ -31,7 +31,6 @@ const ReadingProgress = ({ target }) => {
     window.addEventListener("scroll", scrollListener);
     return () => window.removeEventListener("scroll", scrollListener);
   });
-
   return (
     <div
       className={`reading-progress-bar sticky pt-1 top-16 bg-teal-300`}
@@ -39,4 +38,9 @@ const ReadingProgress = ({ target }) => {
     />
   );
 };
+
+ReadingProgress.propTypes = {
+  target: PropTypes.object,
+};
+
 export default ReadingProgress;

@@ -3,6 +3,7 @@ import { Modal } from "flowbite-react";
 import axios from "axios";
 import SurahNavigation from "./SurahNavigation";
 import { Spinner } from "flowbite-react";
+import { PropTypes } from "prop-types";
 function ModalWindow({ isOpen, setIsOpen }) {
   function onClose() {
     setIsOpen(false);
@@ -71,6 +72,7 @@ function ModalWindow({ isOpen, setIsOpen }) {
             filteredData?.map((item) => {
               return (
                 <SurahNavigation
+                  key={item.number}
                   id={item.number}
                   name={item.englishName}
                   onClick={onClose}
@@ -79,7 +81,10 @@ function ModalWindow({ isOpen, setIsOpen }) {
             })
           ) : (
             <div className="w-full h-64 flex gap-3 items-center justify-center">
-              <span>No Results were found</span>
+              <span>
+                No Results were found for{" "}
+                <span className="font-bold">"{input}"</span>
+              </span>
             </div>
           )}
         </div>
@@ -87,4 +92,10 @@ function ModalWindow({ isOpen, setIsOpen }) {
     </Modal>
   );
 }
+
+ModalWindow.propTypes = {
+  isOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func,
+};
+
 export default ModalWindow;

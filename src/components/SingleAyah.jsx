@@ -1,5 +1,5 @@
 import React from "react";
-
+import { PropTypes } from "prop-types";
 function SingleAyah(props) {
   return (
     <div className="flex gap-2 items-center">
@@ -10,5 +10,9 @@ function SingleAyah(props) {
     </div>
   );
 }
+
+SingleAyah.propTypes = {
+  text: PropTypes.string,
+};
 
 export default SingleAyah;

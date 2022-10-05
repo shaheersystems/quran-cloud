@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
 function Banner({ setIsOpen }) {
   return (
     <div className="max-h-fit py-10 px-10 flex items-center justify-center flex-col bg-teal-100">
@@ -62,4 +63,9 @@ function Banner({ setIsOpen }) {
     </div>
   );
 }
+
+Banner.propTypes = {
+  setIsOpen: PropTypes.func,
+};
+
 export default Banner;

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Banner from "../components/Banner";
 import SurahCard from "../components/SurahCard";
 import axios from "axios";
+import { Spinner } from "flowbite-react";
+import { PropTypes } from "prop-types";
 function Home({ setIsOpen }) {
   const baseUrl = "https://api.alquran.cloud/v1/surah";
   const [data, setData] = useState({});
@@ -45,22 +47,31 @@ function Home({ setIsOpen }) {
         </div>
       </div>
       <div className="py-2 max-h-fit justify-between max-w-5xl m-auto flex flex-wrap gap-2">
-        {isLoading
-          ? "Loading..."
-          : data?.map((item) => {
-              return (
-                <SurahCard
-                  key={item.number}
-                  name={item.name}
-                  number={item.number}
-                  englishName={item.englishName}
-                  englishNameTranslation={item.englishNameTranslation}
-                  numberOfAyahs={item.numberOfAyahs}
-                />
-              );
-            })}
+        {isLoading ? (
+          <div className="h-56 flex items-center justify-center w-full">
+            <Spinner aria-label="Loading all Surahs..." />
+          </div>
+        ) : (
+          data?.map((item) => {
+            return (
+              <SurahCard
+                key={item.number}
+                name={item.name}
+                number={item.number}
+                englishName={item.englishName}
+                englishNameTranslation={item.englishNameTranslation}
+                numberOfAyahs={item.numberOfAyahs}
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );
 }
+
+Home.propType = {
+  setIsOpen: PropTypes.func,
+};
+
 export default Home;

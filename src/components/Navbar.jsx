@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 
 function Navbar({ onClick }) {
   return (
@@ -38,5 +39,8 @@ function Navbar({ onClick }) {
     </div>
   );
 }
+Navbar.propTypes = {
+  onClick: PropTypes.func,
+};
 
 export default Navbar;
