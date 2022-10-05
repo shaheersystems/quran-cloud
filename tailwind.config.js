@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        arabic: ["'Amiri Quran'", "serif"],
+        arabic: ["'Scheherazade New'", "serif"],
         poppins: ["Poppins", "sans-serif"],
       },
     },
