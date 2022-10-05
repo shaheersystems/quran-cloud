@@ -21,14 +21,13 @@ function ModalWindow({ isOpen, setIsOpen }) {
     fetchResult();
   }, []);
   function onChange(event) {
-    var lowerCase = event.target.value.toLowerCase();
-    setInput(lowerCase);
+    setInput(event.target.value);
   }
   const filteredData = data.filter((item) => {
-    if (input === "") {
+    if (input.toLowerCase() === "") {
       return item;
     } else {
-      return item.englishName.toLowerCase().includes(input);
+      return item.englishName.toLowerCase().includes(input.toLowerCase());
     }
   });
   console.log(data);
