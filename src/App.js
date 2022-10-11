@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Surah from "./pages/Surah";
 import ModalWindow from "./components/ModalWindow";
 import { useState } from "react";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home setIsOpen={setIsOpen} />} />
         <Route path="/surah/:id" element={<Surah />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </div>

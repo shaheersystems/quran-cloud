@@ -6,6 +6,8 @@ import { Tooltip, Spinner } from "flowbite-react";
 import axios from "axios";
 import ReadingProgress from "../components/ReadingProgress";
 import { createRef } from "react";
+import TabBar from "../components/TabBar";
+import PageNotFound from "./PageNotFound";
 function Surah() {
   const baseUrl = "https://api.alquran.cloud/v1/surah";
   const [data, setData] = useState([]);
@@ -30,10 +32,14 @@ function Surah() {
     document.body.removeChild(el);
   }
   const target = createRef();
+  if (id > 114) {
+    return <PageNotFound />;
+  }
   return (
     <div>
       <ReadingProgress target={target} />
       <div className="flex flex-col justify-center items-center max-w-5xl m-auto max-h-fit py-10">
+        <TabBar />
         <div className="h-16 w-full flex justify-end items-center gap-4 px-5">
           <Tooltip content="Copy Url">
             <button
